@@ -1,7 +1,13 @@
 package main
 
-import "github.com/KaiserGald/rpgAppSh/pkg/rpgAppSh"
+import (
+	"fmt"
+
+	"github.com/KaiserGald/rpgAppSh/pkg/rpgAppSh"
+)
 
 func main() {
-	rpgAppSh.Start()
+	if err := rpgAppSh.Start(); err != nil {
+		fmt.Println("Error in main(): %v\n", err)
+	}
 }

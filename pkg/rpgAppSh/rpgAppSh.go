@@ -40,7 +40,6 @@ func run() {
 		fmt.Print(":> ")
 		text = getInput(r)
 
-		server.Send(text, conn)
 		if text == exit {
 			fmt.Print("Are you sure you want to exit? y/n :> ")
 			text = getInput(r)
@@ -49,7 +48,7 @@ func run() {
 				os.Exit(0)
 			}
 		} else {
-
+			server.Send(text, conn)
 		}
 	}
 }

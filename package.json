@@ -1,0 +1,14 @@
+{
+  "name": "unlicht-rpg-app",
+  "version": "0.1.0",
+  "description": "A shell to control the RPG Toolkit Server",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KaiserGald/rpg-toolkit-shell"
+  },
+  "homepage": "https://www.scottisenberg.com",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-bump": "^0.8.0"
+  }
+}

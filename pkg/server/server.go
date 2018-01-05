@@ -5,9 +5,17 @@ import (
 	"net"
 )
 
+var servAddr string
+
 // Start starts the tcp connection
 func Start() net.Conn {
-	c, _ := net.Dial("tcp", "127.0.0.1:8081")
+	servAddr = "127.0.0.1:8081"
+	tcpAddr, err := net.ResolveTCPAddr("tcp", servAddr)
+	if err != nil {
+		fmt.Println("ResolveTCPAddr failed: ", err)
+	}
+
+	c, _ := net.DialTCP("tcp", nil, tcpAddr)
 
 	return c
 }

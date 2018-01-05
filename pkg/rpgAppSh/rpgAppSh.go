@@ -49,6 +49,7 @@ func run() {
 			}
 		} else {
 			client.Send(text, conn)
+			client.Read(conn)
 		}
 	}
 }

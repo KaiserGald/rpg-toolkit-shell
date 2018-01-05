@@ -8,7 +8,7 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/KaiserGald/rpgAppSh/pkg/server"
+	"github.com/KaiserGald/rpgAppSh/pkg/client"
 )
 
 // All the commands that the console can read
@@ -30,7 +30,7 @@ func Start() error {
 
 // run starts the loop for the console
 func run() {
-	conn := server.Start()
+	conn := client.Start()
 	r := bufio.NewReader(os.Stdin)
 	var text string
 
@@ -48,7 +48,7 @@ func run() {
 				os.Exit(0)
 			}
 		} else {
-			server.Send(text, conn)
+			client.Send(text, conn)
 		}
 	}
 }
